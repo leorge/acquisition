@@ -1,8 +1,4 @@
 #!/bin/bash
-#
-#   Please mount a small partition onto /mnt.
-#
-cd /mnt
 sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
