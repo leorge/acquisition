@@ -3,10 +3,11 @@ sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
 done
-cd acquisition/sort
+pushd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release}
 wget -P Qsort/Debug https://www.dropbox.com/s/sfe4nn9j7volubw/Sort
 wget -P Qsort/Release https://www.dropbox.com/s/azgpta15xm05w5h/Sort
 wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort
+popd
