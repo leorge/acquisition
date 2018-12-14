@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-#	Please mount a small partition onto /mnt.
+#   Please mount a small partition onto /mnt.
 #
 cd /mnt
 sudo chmod 777 .
 for i in scripts data aquisition; do
-	git clone https://gitlab.com/qmisort/$i.git
+    git clone https://gitlab.com/qmisort/$i.git
 done
 cd aquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release}
