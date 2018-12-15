@@ -12,3 +12,4 @@ wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort
 cd ..
+rm -f $0
