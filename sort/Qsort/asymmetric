@@ -19,7 +19,9 @@ fi
 
 exit
 
-The following lines after @ are appended by a scirpt "performance".
+# asymmetric in Qsort.ods
+
+$ performance $0 26 20
 
 start    : Wed Jun 21 08:12:12 UTC 2017
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
