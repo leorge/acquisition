@@ -8,6 +8,8 @@ mkdir -p {Qsort,indirect}/{Debug,Release}
 wget -P Qsort https://www.dropbox.com/s/lp5xpxndesb5396/Qsort.ods
 wget -P Qsort/Debug https://www.dropbox.com/s/sfe4nn9j7volubw/Sort
 wget -P Qsort/Release https://www.dropbox.com/s/azgpta15xm05w5h/Sort
+wget -P indirect https://www.dropbox.com/s/l620a5qdih204aq/FX8300.ods
+wget -P indirect https://www.dropbox.com/s/fi2xpn5gvkqp11f/phenom.ods
 wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort
