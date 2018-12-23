@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+#  $ ./$0 >> $0
+#  $ random.awk `echo 2\^30 | bc` > data  # 1 Giga lines
+#  $ x=22; Release/Sort -N `echo 2\^$x|bc` -Z 16 data & ./$0 $x; killall Sort
+#  $ x=23; Release/Sort -N `echo 2\^$x|bc` -Z 16 data & ./$0 $x; killall Sort
+#  $ x=24; Release/Sort -N `echo 2\^$x|bc` -Z 16 data & ./$0 $x; killall Sort
+#                          :
+#                          :
+#                          :
+#  Press Ctrl + C when you get enough data.
+#
+LANG=C
+if [ $# -lt 1 ]; then
+    echo "\nusage : $0  log2(N)\n" > /dev/stderr
+    echo "[`hostname`]"
+    free    # Display amount of free and used memory in the system.
+    echo ""
+    exit
+fi
+log2N=$1; shift     # log2(N)
+
+SIGINT=2    # Ctrl-C
+trap break $SIGINT
+rm -f tmp$$
+while true; do
+    free | tee -a tmp$$ | awk '/Mem/{printf " %d", $3}'
+    sleep 1
+done
+trap $SIGINT
+echo "$log2N    `awk '/Mem/ && $3>used {used=$3}END{print used}' tmp$$`" >> $0
+echo "done."
+
+exit
+
+[fx8300]
+              total        used        free      shared  buff/cache   available
+Mem:       15902792      126496    12778160       56196     2998136    15455384
+Swap:             0           0           0
+
+22  324096
+23  458264
+24  785332
+25  1703584
+26  2830660
+27  6430992
+28  8532472
+
+[phenom]
+              total        used        free      shared  buff/cache   available
+Mem:        5857312       92500     5517104       56180      247708     5486760
+Swap:       6028284           0     6028284
+
+22  356248
+23  423756
+24  751736
+25  1669712
+26  2720508
+27  4296392
+
