@@ -4,7 +4,8 @@ for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
 done
 cd acquisition/sort
-mkdir -p {Qsort,indirect}/{Debug,Release}
+mkdir -p {Qsort,indirect}/{Debug,Release} note
+wget -P note https://www.dropbox.com/s/3fa4xd5p0m1nabw/LabNote.ods
 wget -P Qsort https://www.dropbox.com/s/lp5xpxndesb5396/Qsort.ods
 wget -P Qsort/Debug https://www.dropbox.com/s/sfe4nn9j7volubw/Sort
 wget -P Qsort/Release https://www.dropbox.com/s/azgpta15xm05w5h/Sort
