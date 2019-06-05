@@ -12,7 +12,7 @@
 #   Command option for Sort:
 #       -B n : Boundary number to change to an indirect sorting function
 #       -q   : asymmetric Quicksort
-#       -G   : ticket_sort (extended taG sort)
+#       -k   : ticKet_sort (extended tag sort)
 #       -I m : indirect Mergesort
 #       -I q : indirect Quicksort
 #
@@ -23,7 +23,7 @@ else
     N=$1; shift
     size=${opt:=16}
     boundary=${threshold:=$N}
-    if ! Release/Sort -N $N -Z $size -B $boundary -qGI qm $* ; then exit ; fi
+    if ! Release/Sort -N $N -Z $size -B $boundary -qkI qm $* ; then exit ; fi
 fi
 
 exit
