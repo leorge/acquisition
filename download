@@ -18,6 +18,6 @@ wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort
 cd ../..
 
-find . -name Sort
-echo ""; echo "Confirm the PATH."; echo ""
 tail -5 ~/.bashrc
+find . -name Sort
+echo ""; echo "Confirm the PATH in the ~/.bashrc, logout and login again."
