@@ -3,7 +3,6 @@ sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
 done
-echo "PATH=$PATH:$PWD/scripts:$PWD/data" >> ~/.bashrc
 
 cd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
@@ -20,4 +19,7 @@ cd ../..
 
 tail -5 ~/.bashrc
 find . -name Sort
-echo ""; echo "Confirm the PATH in the ~/.bashrc, logout and login again."
+if echo $PATH | grep $PWD/scripts ; then
+    echo "PATH=$PATH:$PWD/scripts:$PWD/data" >> ~/.bashrc
+    echo "Please login again."
+fi
