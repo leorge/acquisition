@@ -2,8 +2,11 @@
 sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
-    (echo $PATH | grep $PWD/$i) || echo "export PATH=$PATH:$PWD/$i" >> ~/.bashrc
+    p="$p:$PWD/$i"
 done
+echo "PATH=$PATH$p" >> ~/.bashrc
+tail -5 ~/.bashrc
+
 cd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
 wget -P note https://www.dropbox.com/s/3fa4xd5p0m1nabw/LabNote.ods
