@@ -2,9 +2,8 @@
 sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
-    p="$p:$PWD/$i"
 done
-echo "PATH=$PATH$p" >> ~/.bashrc
+echo "PATH=$PATH:$PWD/scripts:$PWD/data" >> ~/.bashrc
 
 cd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
