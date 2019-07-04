@@ -1,0 +1,6 @@
+Debug/
+Release/
+*.odt
+*.ods
+*.pdf
+data
