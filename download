@@ -5,7 +5,7 @@ for i in scripts data acquisition; do
 done
 addpath="$PWD/scripts:$PWD/data"
 
-cd acquisition/sort
+pushd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
 wget -P note https://www.dropbox.com/s/3fa4xd5p0m1nabw/LabNote.ods
 wget -P Qsort https://www.dropbox.com/s/lp5xpxndesb5396/Qsort.ods
@@ -15,8 +15,8 @@ wget -P indirect https://www.dropbox.com/s/l620a5qdih204aq/FX8300.ods
 wget -P indirect https://www.dropbox.com/s/fi2xpn5gvkqp11f/phenom.ods
 wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
-chmod +x {Qsort,indirect}/{Debug,Release}/Sort
-cd ../..
+chmod +x {Qsort,indirect}/{Debug,Release}/Sort */*.od?
+popd
 
 find . -name Sort
 if [ -z `grep $addpath ~/.bashrc` ]; then
