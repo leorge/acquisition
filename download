@@ -17,8 +17,11 @@ wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort */*.od?
 popd
+echo
 
+echo "The following list shows executable programs."
 find . -name Sort
+
 if [ -z `grep $addpath ~/.bashrc` ]; then
     echo "PATH=\$PATH:$addpath" >> ~/.bashrc
     echo "Please login again."
