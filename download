@@ -1,20 +1,24 @@
 #!/bin/bash
 sudo chmod 777 .
 for i in scripts data acquisition; do
-    git clone https://gitlab.com/qmisort/$i.git
+    if [ -d $i ]; then
+        pushd $i; git pull; popd
+    else
+        git clone https://gitlab.com/qmisort/$i.git
+    fi
 done
 addpath="$PWD/scripts:$PWD/data"
 
 pushd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
-wget -P note https://www.dropbox.com/s/3fa4xd5p0m1nabw/LabNote.ods
-wget -P Qsort https://www.dropbox.com/s/lp5xpxndesb5396/Qsort.ods
-wget -P Qsort/Debug https://www.dropbox.com/s/sfe4nn9j7volubw/Sort
-wget -P Qsort/Release https://www.dropbox.com/s/azgpta15xm05w5h/Sort
-wget -P indirect https://www.dropbox.com/s/l620a5qdih204aq/FX8300.ods
-wget -P indirect https://www.dropbox.com/s/fi2xpn5gvkqp11f/phenom.ods
-wget -P indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
-wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
+wget -NP note https://www.dropbox.com/s/3fa4xd5p0m1nabw/LabNote.ods
+wget -NP Qsort https://www.dropbox.com/s/lp5xpxndesb5396/Qsort.ods
+wget -NP Qsort/Debug https://www.dropbox.com/s/sfe4nn9j7volubw/Sort
+wget -NP Qsort/Release https://www.dropbox.com/s/azgpta15xm05w5h/Sort
+wget -NP indirect https://www.dropbox.com/s/l620a5qdih204aq/FX8300.ods
+wget -NP indirect https://www.dropbox.com/s/fi2xpn5gvkqp11f/phenom.ods
+wget -NP indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
+wget -NP indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort */*.od?
 popd
 echo
