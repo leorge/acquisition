@@ -3,6 +3,7 @@ sudo chmod 777 .
 for i in scripts data acquisition; do
     git clone https://gitlab.com/qmisort/$i.git
 done
+addpath="$PWD/scripts:$PWD/data"
 
 cd acquisition/sort
 mkdir -p {Qsort,indirect}/{Debug,Release} note
@@ -17,9 +18,8 @@ wget -P indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort
 cd ../..
 
-tail -5 ~/.bashrc
 find . -name Sort
-if echo $PATH | grep $PWD/scripts ; then
-    echo "PATH=$PATH:$PWD/scripts:$PWD/data" >> ~/.bashrc
+if [ -z `grep $addpath ~/.bashrc` ]; then
+    echo "PATH=\$PATH:$addpath" >> ~/.bashrc
     echo "Please login again."
 fi
