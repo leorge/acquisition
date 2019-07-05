@@ -26,3 +26,4 @@ if [ -z `grep $addpath ~/.bashrc` ]; then
     echo "PATH=\$PATH:$addpath" >> ~/.bashrc
     echo "Please login again."
 fi
+rm -f $0	# Delete myself.
