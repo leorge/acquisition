@@ -16,7 +16,7 @@
 #       -I m : indirect Mergesort
 #       -I q : indirect Quicksort
 #
-echo "Arguments : $*"
+# echo "Arguments : $*"
 if [ $# -eq 0 ]; then
     echo "Usage : [opt=<size>] [th=<threshold>] performance  $0  log2N  [repeat]"
 else

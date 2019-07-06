@@ -8,7 +8,7 @@
 #           $N skips the quicksort.
 #   -I m  : Indirect Mergesort
 #
-echo "Arguments : $*"
+# echo "Arguments : $*"
 if [ $# -eq 0 ]; then
     echo "Usage : [opt=<size>] performance  $0  log2N  [repeat]"
 else

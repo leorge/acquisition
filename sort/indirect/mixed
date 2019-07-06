@@ -13,7 +13,7 @@
 #      N <= t -- median of random log2(N)-1|1 elements.
 #      else   -- median of random (int(log2(N))/2)|1 elements.
 #
-echo "Arguments : $*"
+# echo "Arguments : $*"
 if [ $# -eq 0 ]; then
     echo "Usage : [opt=<size>] performance  $0  log2N  [repeat]"
 else
