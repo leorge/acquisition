@@ -1,11 +1,15 @@
-#!/bin/sh
+#!/bin/sh -v
 LANG=C
 if [ $# -lt 1 ]; then
-    echo "usage : [size=xx]  [repeat=xx]  $0  log2(N)"
+    echo "usage : [size=xx]  $0  log2(N)  [repeat]"
     exit
 fi
 log2N=$1; shift     # log2(N)
 if [ $log2N -lt 20 ]; then log2N=20; fi
+if [ $# -gt 0 ]; then
+    repeat=$1; shift
+    if [ $repeat -le 0 ]; then repeat=1; fi
+fi
 
 rm -f tmp[0-9]*
 
@@ -57,7 +61,7 @@ exit
 
 # pivot256 in phenom.ods
 
-$ size=256 repeat=10 ./$0 20
+$ size=256 ./$0 20 10
 start    : Sun Sep  2 07:51:55 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
 CPU      : AMD Phenom(tm) II X2 550 Processor
@@ -149,7 +153,7 @@ imsort(&)       961736  959908 961244 960994  961223 961798  962018 960296 96092
 
 # pivot128 in FX8300.ods
 
-$ size=128 repeat=10 ./$0 20
+$ size=128 ./$0 20 10
 
 start    : Sat Sep 22 20:30:27 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -242,7 +246,7 @@ imsort(&)       557363 555666 556854 555591 555635 556242 556656 555265 557634 5
 
 # p512 in FX8300.ods
 
-$ size=512 repeat=10 ./$0 23
+$ size=512 ./$0 23 10
 
 start    : Sat Sep 22 23:47:02 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
