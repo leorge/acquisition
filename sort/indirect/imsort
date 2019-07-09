@@ -1180,18 +1180,3 @@ imsort(&)     2087  5523  13997 32682  72028  156886 294022
 
 
 @
-start    : Tue Jul  9 02:24:14 UTC 2019
-computer : develop 4.19.0-1-amd64 #1 SMP Debian 4.19.5-2~mx17+1 (2018-12-12) unknown GNU/Linux
-CPU      : AMD FX(tm)-8300 Eight-Core Processor
-operator : leo
-size     : 256
-log2N    : 15
-repeat   : 1
-stop     : Tue Jul  9 02:24:17 UTC 2019
-1
-log2(N)       12   13   14   15
-qsort(3)      1041 2392 5446 14387
-asymm_qsort() 1147 2493 5517 13818
-merge_array() 1650 3927 9393 22712
-imsort(&)     1062 2354 5532 14886
-
