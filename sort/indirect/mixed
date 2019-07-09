@@ -26,7 +26,7 @@ exit
 
 # mixed in FX8300.ods
 
-$ opt=256 performance $0 23 10
+$ size=256 performance $0 23 10
 
 start    : Thu Aug  9 19:42:24 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux

@@ -20,7 +20,7 @@ exit
 
 # imsort16 in FX8300.ods
 
-$ opt=16 performance $0 27 10
+$ size=16 performance $0 27 10
 
 start    : Wed Feb  6 20:58:29 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -103,7 +103,7 @@ imsort(&)     624  1353 3019 6514 14130 29256 65187 146615 343121 795708 1832810
 
 # i32 in FX8300.ods
 
-$ opt=32 performance $0 26 10
+$ size=32 performance $0 26 10
 
 start    : Thu Feb  7 13:14:36 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -186,7 +186,7 @@ imsort(&)     638 1386 3096 6537 14256 31778 69308 161692 387328 908469 2062181 
 
 # i64 in FX8300.ods
 
-$ opt=64 performance $0 25 10
+$ size=64 performance $0 25 10
 
 start    : Thu Feb  7 22:03:23 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -269,7 +269,7 @@ imsort(&)     665 1438 3232 7186 15404 33112 76471 192805 461596 1044507 2340385
 
 # i128 in FX8300.ods
 
-$ opt=128 performance $0 24 10
+$ size=128 performance $0 24 10
 
 start    : Fri Feb  8 05:11:21 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -351,7 +351,7 @@ imsort(&)     728 1610 3759 8028  17725 42773 103401 241797 536522 1216087 26377
 
 # i256 in FX8300.ods
 
-$ opt=256 performance $0 23 10
+$ size=256 performance $0 23 10
 
 start    : Fri Feb  8 08:36:49 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -434,7 +434,7 @@ imsort(&)     793  2093 4414 10224 24293 57728 132919 295804 658378 1426434 3094
 
 # i512 in FX8300.ods
 
-$ opt=512 performance $0 22 10
+$ size=512 performance $0 22 10
 
 start    : Fri Feb  8 11:12:27 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -517,7 +517,7 @@ imsort(&)     1233 2723 5994  14327 34093 77524  175953 389011  852937  1841131 
 
 # i1024 in FX8300.ods
 
-$ opt=1024 performance $0 21 10
+$ size=1024 performance $0 21 10
 
 start    : Fri Feb  8 12:54:36 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -600,7 +600,7 @@ imsort(&)     1593 3496  8546  20673 46653  103009 223524 479829  1023478 199517
 
 # indirect16 in phenom.ods
 
-$ opt=16 performance $0 24 10
+$ size=16 performance $0 24 10
 
 start    : Fri Feb  8 22:49:13 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -683,7 +683,7 @@ imsort(&)     839  1811 3894 8530 19101 43030 91891 215139 527514 1238269 279416
 
 # i32 in phenom.ods
 
-$ opt=32 performance $0 23 10
+$ size=32 performance $0 23 10
 
 start    : Sat Feb  9 02:06:24 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -766,7 +766,7 @@ imsort(&)     836 1845 4062 9028 20486 45071 102211 255405 610147 1410825 307115
 
 # i64 in phenom.ods
 
-$ opt=64 performance $0 22 10
+$ size=64 performance $0 22 10
 
 start    : Sat Feb  9 03:46:31 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -849,7 +849,7 @@ imsort(&)     892  1977 4462 10234 22749 51527 128907 316167 723086 1614806 3723
 
 # i128 in phenom.ods
 
-$ opt=128 performance $0 21 10
+$ size=128 performance $0 21 10
 
 start    : Sat Feb  9 04:37:11 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -932,7 +932,7 @@ imsort(&)     964  2258 5177 11711 27881 70073 168073 382283 853246 1873529
 
 # i256 in phenom.ods
 
-$ opt=256 performance $0 20 10
+$ size=256 performance $0 20 10
 
 start    : Sat Feb  9 05:13:03 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -1015,7 +1015,7 @@ imsort(&)     1182 2677 6127  15007 37596 89183  202833 447618 956906
 
 # i512 in phenom.ods
 
-$ opt=512 performance $0 19 10
+$ size=512 performance $0 19 10
 
 start    : Sat Feb  9 06:21:05 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -1098,7 +1098,7 @@ imsort(&)     1458 3448  8857  22240 52490  118289 259538 524821
 
 # i1024 in phenom.ods
 
-$ opt=1024 performance $0 18 10
+$ size=1024 performance $0 18 10
 
 start    : Sat Feb  9 06:43:01 UTC 2019
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
