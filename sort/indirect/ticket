@@ -6,7 +6,7 @@
 #       $ performance $0 log2(N) [repeat]
 #
 #   Optional variables:
-#       $opt       : The size of an element
+#       $size       : The size of an element
 #       $threshold : Threshold N to switch algorithm to indirect sorting.
 #
 #   Command option for Sort:
@@ -18,12 +18,11 @@
 #
 # echo "Arguments : $*"
 if [ $# -eq 0 ]; then
-    echo "Usage : [opt=<size>] [th=<threshold>] performance  $0  log2N  [repeat]"
+    echo "Usage : [size=<size>] [th=<threshold>] performance  $0  log2N  [repeat]"
 else
     N=$1; shift
-    size=${opt:=16}
     boundary=${threshold:=$N}
-    if ! Release/Sort -N $N -Z $size -B $boundary -qkI qm $* ; then exit ; fi
+    if ! Release/Sort -N $N -Z ${size:=16} -B $boundary -qkI qm $* ; then exit ; fi
 fi
 
 exit
