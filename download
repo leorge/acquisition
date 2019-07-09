@@ -1,11 +1,7 @@
 #!/bin/bash
 sudo chmod 777 .
 for i in scripts data acquisition; do
-    if [ -d $i ]; then
-        pushd $i; git pull; popd
-    else
-        git clone https://gitlab.com/qmisort/$i.git
-    fi
+    git clone https://gitlab.com/qmisort/$i.git
 done
 addpath="$PWD/scripts:$PWD/data"
 
@@ -21,13 +17,12 @@ wget -NP indirect/Debug https://www.dropbox.com/s/8xwj42tzw1pixqv/Sort
 wget -NP indirect/Release https://www.dropbox.com/s/shswoc0fqpifov6/Sort
 chmod +x {Qsort,indirect}/{Debug,Release}/Sort */*.od?
 popd
-echo
 
-echo "The following list shows executable programs."
+echo -e "\nThe following list shows executable programs."
 find . -name Sort
 
 if [ -z `grep $addpath ~/.bashrc` ]; then
     echo "PATH=\$PATH:$addpath" >> ~/.bashrc
     echo "Please login again."
 fi
-rm -f $0	# Delete myself.
+rm -f $0    # Delete myself.
