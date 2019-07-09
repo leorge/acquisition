@@ -15,12 +15,11 @@
 #
 # echo "Arguments : $*"
 if [ $# -eq 0 ]; then
-    echo "Usage : [opt=<size>] performance  $0  log2N  [repeat]"
+    echo "Usage : [size=<size>] performance  $0  log2N  [repeat]"
 else
     N=$1; shift
-    size=${opt:=16}
-    if ! Release/Sort -N $N -Z $size -q -I q -B $N -P 63,1,1,1,1      $* | sed 's/iqsort(&)/med-of-log/'   ; then exit ; fi
-    if ! Release/Sort -N $N -Z $size    -I q -B $N -P 63,1,255,4095,1 $* | sed 's/iqsort(&)/mixed-median/' ; then exit ; fi
+    if ! Release/Sort -N $N -Z ${size:=16} -q -I q -B $N -P 63,1,1,1,1      $* | sed 's/iqsort(&)/med-of-log/'   ; then exit ; fi
+    if ! Release/Sort -N $N -Z $size          -I q -B $N -P 63,1,255,4095,1 $* | sed 's/iqsort(&)/mixed-median/' ; then exit ; fi
 fi
 
 exit
