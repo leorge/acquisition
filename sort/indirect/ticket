@@ -2,15 +2,10 @@
 #
 #   Compare Mergesort and Asymmetric Quicksort.
 #
-#   Usage:
-#       $ performance $0 log2(N) [repeat]
-#
 #   Optional variables:
-#       $size       : The size of an element
-#       $threshold : Threshold N to switch algorithm to indirect sorting.
+#       $size     : The size of an element
 #
 #   Command option for Sort:
-#       -B n : Boundary number to change to an indirect sorting function
 #       -q   : asymmetric Quicksort
 #       -k   : ticKet_sort (extended tag sort)
 #       -I m : indirect Mergesort
@@ -18,18 +13,17 @@
 #
 # echo "Arguments : $*"
 if [ $# -eq 0 ]; then
-    echo "Usage : [size=<size>] [th=<threshold>] performance  $0  log2N  [repeat]"
+    echo "Usage : [size=<size>] performance  $0  log2N  [repeat]"
 else
     N=$1; shift
-    boundary=${threshold:=$N}
-    if ! Release/Sort -N $N -Z ${size:=16} -B $boundary -qkI qm $* ; then exit ; fi
+    if ! Release/Sort -N $N -Z ${size:=16} -qkI qm $* ; then exit ; fi
 fi
 
 exit
 
 # ticket16 in FX8300.ods
 
-$ size=16 threshold=4095 performance $0 27 10
+$ size=16 performance $0 27 10
 
 start    : Sat Nov 10 13:40:20 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -121,7 +115,7 @@ imsort(&)     648  1407 2902 6445 13650 28469 60158 126187 275653 580954 1218204
 
 # t32 in FX8300.ods
 
-$ size=32 threshold=4095 performance $0 26 10
+$ size=32 performance $0 26 10
 
 start    : Sun Nov 11 07:13:27 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -213,7 +207,7 @@ imsort(&)     663 1442 2982 6346 13500 29867 63161 132043 269980 588322 1221307 
 
 # t64 in FX8300.ods
 
-$ size=64 threshold=4095 performance $0 25 10
+$ size=64 performance $0 25 10
 
 start    : Sun Nov 11 16:22:45 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -305,7 +299,7 @@ imsort(&)     685  1496 3212 6907 14923 31461 67490  141060 298710 648622  13689
 
 # t128 in FX8300.ods
 
-$ size=128 threshold=16384 performance $0 24 10
+$ size=128 performance $0 24 10
 
 start    : Sun Nov 11 22:23:56 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -397,7 +391,7 @@ imsort(&)     748  1571 4251 8072  17387 38270 84165  184863 395118 862207  1840
 
 # t256 in FX8300.ods
 
-$ size=256 threshold=16384 performance $0 23 10
+$ size=256 performance $0 23 10
 
 start    : Mon Nov 12 01:41:09 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -765,7 +759,7 @@ imsort(&)     835  1842 3994 9002  19945 46358 102430 263512 616278 1396246 3105
 
 # t32 in phenom.ods
 
-$ size=32 threshold=4095 performance $0 23 10
+$ size=32 performance $0 23 10
 
 start    : Tue Nov 13 07:39:37 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -857,7 +851,7 @@ imsort(&)     848  1879 4212 9726  22043 47142 124575 302557 699698 1541943 3433
 
 # t64 in phenom.ods
 
-$ size=64 threshold=4095 performance $0 22 10
+$ size=64 performance $0 22 10
 
 start    : Tue Nov 13 09:43:56 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -949,7 +943,7 @@ imsort(&)     903  2026 4620 10798 23951 62564 155441 358099 802883 1763303 3867
 
 # t128 in phenom.ods
 
-$ size=128 threshold=65535 performance $0 21 10
+$ size=128 performance $0 21 10
 
 start    : Tue Nov 13 10:55:35 UTC 2018
 computer : archiso 4.8.6-1-ARCH #1 SMP PREEMPT Mon Oct 31 18:51:30 CET 2016 unknown GNU/Linux
@@ -1318,4 +1312,3 @@ iqsort(&)     1896 5191 12453 28584 63433  137582 295114
 imsort(&)     1915 5298 12830 29392 65337  142719 305665
 
 @
-
