@@ -1,4 +1,4 @@
-#!/bin/sh -v
+#!/bin/sh
 LANG=C
 if [ $# -lt 1 ]; then
     echo "usage : [size=xx]  $0  log2(N)  [repeat]"
