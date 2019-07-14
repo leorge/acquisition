@@ -4,7 +4,7 @@
 #
 #   Optional variables:
 #       $size     : The size of an element
-#       $boundary : Threshold N to switch algorithm to indirect sorting.
+#       $boundary : Threshold N to switch algorithm for indirect sorting.
 #
 #   Command option for Sort:
 #       -B n : Boundary number to change to an indirect sorting function
